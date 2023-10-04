@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container-profile">
+        <div class="page1">
+            <img src="/SourceIMG/avatar1.jpg" style="border-radius: 95px;">
+            <figcaption>Irham Zharfan Atmoko</figcaption>
+            <div class="dataUser">
+                <p>Email</p>
+                <p>Phone Number</p>
+                <p>Date Of Birth</p>
+            </div>
+        </div>
+
+        <div class="page2">
+            <h2>Settings</h2>
+            <!-- untuk list di bagian Settings (PersonalProfile, User Location, etc) -->
+            <div class="list">
+                <ul>
+                    <li id="list">Personal Profile</li>
+                    <li id="list2">User Location</li>
+                    <li id="list3">Change Password & Email</li>
+                </ul>
+            </div>
+            <hr style="color: whitesmoke;">
+            
+            <div class="personalProfile-container hide">
+                <div class="editProfile">
+                    <img src="/SourceIMG/AirForce1-2.png" class="editProfileImg">
+                    <button type="submit" class="save btn">Save Changes</button>                                                                                           
+                </div>
+                <div class="detailProfile">
+                    <h4>First Name</h4>
+                    <input type="text" placeholder="Enter Your First Name">
+                    <h4>Last Name</h4>
+                    <input type="text" placeholder="Enter Last Name">
+                    <h4>Phone Number</h4>
+                    <input type="text" name="" id="" placeholder="Enter Your Phone Number">
+                    <h4>BirthDay</h4>
+                    <input type="date" name="" id="">
+                </div>
+            </div>
+        <!-- Ini container untuk User Location Detail -->
+        
+            <div class="userLocation-container hide">
+                <div class="detailProfile">
+                    <h4>Address</h4>
+                    <input type="text" placeholder="Enter Your Address">
+                    <h4>Province</h4>
+                    <input type="text" placeholder="Enter Your Province">
+                    <h4>City</h4>
+                    <input type="text" placeholder="Enter Your City">
+                    <h4>Postal Code</h4>
+                    <input type="text" placeholder="Enter Your Postal Code">
+                    <button class="save btn2" type="submit" onclick="alert('ur data will be posted.')">Save Changes</button>
+                </div>
+            </div>
+
+            <!-- Ini Container untuk Change Password -->
+            <div class="changePass-container hide">
+                <h4>Email</h4>
+                <input type="email" placeholder="Enter Your Email" required>
+                <h4>Password</h4>
+                <input type="password" placeholder="Enter Your Password">
+                <h4>Confirm Password</h4>
+                <input type="password" placeholder="Enter Your Confirm Password">
+                <button class="save btn2" type="submit" onclick="alert('ur data will be updated.')">Save Changes</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}

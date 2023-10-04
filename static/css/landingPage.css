@@ -1,0 +1,267 @@
+*{
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2vh .5vh;
+}
+
+h1{
+    font-weight: 900;
+}
+
+/* untuk bagian navbar */
+.navbar ul li {
+    display: inline-block;
+    padding: 1.5vh 1vh;
+    margin-left: 1vh;
+    font-size: large;
+    font-weight: 300;
+    font-size: 1.3em;
+    transition: all 110ms ease-in-out;
+    text-align: center;
+}
+
+/* untuk animasi garis dibawah tulisan navbar ketika di hover  */
+.navbar ul li::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: black;
+    margin: auto;
+    display: flex;
+    transition: all 350ms ease-in-out;
+}
+
+/* ketika di hover */
+.navbar ul li:hover::after{
+    width: 70%;
+    transition: width 0.3s linear;
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
+    transition: all 100ms ease-in-out;
+}
+
+a:hover{
+    transition-delay: 50ms;
+}
+
+.searchBar{
+    width: 250px;
+    height: 25px;
+    margin-top: 1%;
+    border: 2px solid rgba(0,0,0,0.2);
+    border-radius: 15px;
+    background-color: rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.detailuser{
+    right: -20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 25px;
+    align-items: center;
+    cursor:pointer;
+}
+
+.userProfile{
+    height: 50px;
+    width: 50px;
+    background-size: cover;
+    border-radius: 60%;
+}
+
+figcaption{
+    margin-left: 5px;
+    margin-top: 8px;
+}
+
+/* Untuk Highlight Container*/
+.highlight-container{
+    max-width: 1000px;
+    position: absolute;
+    margin: auto;
+}
+
+.mySlides{
+    display: none;
+}
+
+.himage{
+    max-height: 400px;
+    object-fit: contain;
+}
+
+/* Arrow <- , -> in product highlihht*/
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 6px 6px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.next {
+    right: 3%;
+    border-radius: 6px 0 0 6px;
+}
+
+.prev{
+    left: 3%;
+}
+  
+  /* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.active:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+/* for figCaption */
+.test{
+    text-align: center;
+    /* display: none; */
+}
+
+/* container for Recommendation 'For you' */
+.forYou{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 4%;
+    justify-content: center;
+    margin: 2%;
+
+    /* background-color: rgba(0, 0, 0, 0.19); */
+}
+
+.card{
+    width: 20vh;
+    height: 25vh;
+    margin: 2% 2%;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all 0.25s ease-in-out;
+}
+
+.card:hover{
+    background-color: rgba(0,0,0,0.09);
+    cursor: pointer;
+}
+
+.catalog{
+    object-fit:cover;
+    width: 150px;
+    height: 190px;
+    /* z-index: 0; */
+}
+
+/* for caption product Catalog like Price IDR n productName */
+.caption{
+    position: absolute;
+    text-align: center;
+    margin-left: 2%; 
+}
+
+.price{
+    color: green;
+    margin-left: 3%;
+}
+
+.addOn{
+    margin-top: 18px;
+}
+
+.foot{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(162, 162, 162);
+    height: 25vh;
+    align-items: center;
+    padding: 5%;
+}
+
+.label{
+    height: 5vh;
+    background-color: red;
+    color: white;
+    text-align: center;
+    margin: auto;
+}
+
+.logo{
+    height: 5.5vh;
+}
+
+.socmed ul{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+}
+
+.socmed ul a {
+    margin: 5%;
+}
+
+.women-container{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 4%;
+    justify-content: center;
+    bottom: 5vh;
+    margin: 2% 10%;
+    padding: 5% 5%;
+    border-radius: 10px;
+    background-color: #f3f3f3;
+}
+
+.men-container{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 4%;
+    justify-content: center;
+    bottom: 5vh;
+    margin: 2% 10%;
+    padding: 5% 5%;
+    border-radius: 10px;
+    background-color: #f3f3f3;
+}
+  
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}

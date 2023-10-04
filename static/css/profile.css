@@ -1,0 +1,107 @@
+/* Ini untuk css halaman edit profile  */
+
+*{
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.container-profile{
+    display: flex;
+    flex-direction: row;
+    margin: 5%;
+}
+
+.page1{
+    flex-basis: 1;
+    border: 1px solid grey;
+    border-radius: 15px;
+    background-color: whitesmoke;
+    padding: 5vh;
+    margin-right: .5%;
+}
+
+.page2{
+    flex-grow: 2;
+    border: 1px solid gray;
+    border-radius: 15px;
+    background-color: whitesmoke;
+    padding: 5vh;
+    margin-left: .5% ;
+}
+
+.list ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 5%;
+}
+
+.list ul li{
+    display: inline-block;
+    cursor: pointer;
+    padding-bottom: 2vh ;
+}
+
+.list ul li::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: black;
+    margin: auto;
+    display: flex;
+    transition: all 350ms ease-in-out;
+}
+
+.list ul li:hover::after{
+    width: 70%;
+    transition: width 0.3s linear;
+}
+
+.editDetail{
+    /* position: absolute; */
+    display: none;
+}
+
+/* Container untuk Edit Personal Profile */
+.personalProfile-container{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.editProfileImg{
+    height: 35vh;
+    width: 35vh;
+    border-radius: 95%;
+    flex-grow: 1;
+}
+
+.detailProfile{
+    display: flex;
+    flex-grow: 2;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.save{
+    box-shadow: 1px 1px 1px;
+}
+
+.btn{
+    padding: 5%;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+
+input{
+    border-radius: 5px;
+    padding: 1vh;
+    width: 100%;
+}
+
+.hide{
+    display: none;
+}

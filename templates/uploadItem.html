@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="container-profile">
+        <div class="page2">
+            <h2>Upload Your Item</h2>
+
+            <div class="link-description">
+                Item<span class="material-symbols-outlined">arrow_forward_ios</span>Detail<span class="material-symbols-outlined">arrow_forward_ios</span>Finish
+            </div>
+            <!-- untuk list di bagian Settings (PersonalProfile, User Location, etc) -->
+
+            <hr class="hor-line">
+            <div class="content">
+                <form method="POST" action="{% url 'create' %}" enctype="multipart/form-data" class="row">
+                    {% csrf_token %}
+                    <div class="col-lg-5">
+                        <div class="item-img">
+                            <label class="label-img" for="id_image" style="font-weight: 100; padding: 0px; width: 330px; height: 330px;" id="label-img"></label>
+                            <div style="display: none;">
+                                {{form.image}}
+                            </div>
+                            
+                        </div>        
+                    </div>
+        
+                    <div class="col">      
+                        
+                        <div class="item-info-1">
+
+                        <label for="id_name">Name</label>
+                        {{form.name}}
+                        
+                        <label for="id_size">Size</label>
+                        {{form.size}}
+                        
+                        <label for="id_price">Price</label>
+                        {{form.price}}
+         
+                        <label for="id_condition">Condition</label>
+                        {{form.condition}}
+                        <button onclick="myFunc()" id="next">Next</button>
+                        </div>
+
+                        <div class="item-info-2" style="display: none">
+                            <label for="id_location">Location</label>
+                            {{form.location}}
+    
+                            <label for="id_owner">Owner</label>
+                            {{form.owner}}
+    
+                            <label for="id_phone_number">Phone Number</label>
+                            {{form.phone_number}}
+    
+                            <label for="id_size">Description</label>
+                            {{form.description}}
+                            <button type="submit" id="next">Submit</button>
+                        </div>
+                        
+                       
+                        
+                    </div>
+                </form>            
+            </div>            
+            <hr style="color: whitesmoke;">
+        
+            <!-- <div class="userLocation-container hide">
+                <div class="detailProfile">
+                    <h4>Address</h4>
+                    <input type="text" placeholder="Enter Your Address">
+                    <h4>Province</h4>
+                    <input type="text" placeholder="Enter Your Province">
+                    <h4>City</h4>
+                    <input type="text" placeholder="Enter Your City">
+                    <h4>Postal Code</h4>
+                    <input type="text" placeholder="Enter Your Postal Code">
+                    <button type="submit" onclick="alert('ur data will be posted.')">Save Changes</button>
+                </div>
+            </div> -->
+        </div>
+    </div>
+<script>
+
+const uploadInput = document.querySelector('#id_image');
+
+uploadInput.addEventListener('change',e => {
+    if(e.target.files.length > 0) {
+        const url = URL.createObjectURL(e.target.files[0]);
+        document.getElementById("label-img").innerHTML = `<img src="${url}" alt="" style="width: 300px; height : 300px; vertical-align:middle;">`    
+    }
+})
+
+function myFunc(){
+    const ele = document.getElementsByClassName("item-info-1");
+    ele[0].style.display = 'none';
+    const ele1 = document.getElementsByClassName("item-info-2");
+    ele1[0].style.display = 'block';
+    
+}
+
+
+</script>
+
+{% endblock %}

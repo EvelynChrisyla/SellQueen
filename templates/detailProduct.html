@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/landingPage.css' %}">
+    
+    
+    <!-- Styling font 'Poppins' -->
+    <link rel="stylesheet" href="{% static 'css/detailProduct.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header class="navbar">
+        <img src="{% static '/images/Logo.png' %}" class="logo">
+        <ul>
+            <li><a href="#home"><a href="{% url 'landing' %}">Home</a></a></li>
+            <li><a href="#women">Women</a></li>
+            <li><a href="#men">Men</a></li>
+            <li><a href="{% url 'create' %}">Selling</a></li>
+        </ul>
+        <input type="text" class="searchBar" placeholder="Search..">
+        <figure class="detailuser">
+            <a href="{% url 'profile' %}"><img class="userProfile" src="{% static 'images/avatar1.jpg' %}" style=""></a>
+            <!-- <figcaption style="align-items: center;"><a href="/SourceHTML/loginPage.html">Irham Atmoko</a></figcaption> -->
+        </figure>
+    </header>
+
+    <div class="container">
+        <link rel="stylesheet" href="{% static 'css/detailProduct.css' %}">
+        <div class="photoProduct box">
+            <img class="himage" src="{{data.imageURL}}" alt="No image found">
+        </div>
+        <div class="paymentDetail box">
+            <h1 style="text-align: center; font-weight: 900;">{{data.name}}</h1>
+            <div class="itemDetail">
+                <div class="info">
+                    <p>Size</p>
+                    <p>{{data.size}}</p>
+                </div>
+                <div class="info">
+                    <p>Condition</p>
+                    <p>{{data.condition}}</p>
+                </div>
+                <div class="info">
+                    <p>Item Location</p>
+                    <p>{{data.location}}</p>
+                </div>
+            </div>
+            <div class="itemDetail">
+                <h4 style="margin-bottom: 2vh;">Payment Summary</h4>
+                <div class="info">
+                    <p>Product Price</p>
+                    <p>Rp. {{data.price}}</p>
+                </div>
+                <div class="info">
+                    <p>Admin</p>
+                    <p>Rp. 0</p>
+                </div>
+                <div class="info total">
+                    <p>Total</p>
+                    <p>Rp. {{data.price}}</p>
+                </div>
+                <h4 style="margin: 2vh 0vh;">Seller Number</h4>
+                <div class="detailSeller">
+                    <div class="phoneNum">
+                        <p>{{data.owner}}</p>
+                        <p>{{data.phone_number}}</p>
+                    </div>
+                    <div class="buyMe">
+                        <button type="submit" class="buy-btn">BUY</button>
+                    </div>
+                </div>
+                <div class="paymentInfo" style="display: none;">
+                    <!-- Untuk QRCODE rekening seller -->
+                    <div class="bankInfo">
+                        <img src="{% static 'images/qrcode.png' %}" class="bankInfo">
+                        <figcaption>Bank Central Asia.Tbk</figcaption>
+                    </div>
+
+                    <!-- container upload bukti transfer  -->
+                    <div class="paymentProof">
+                        <caption>Upload the proof of payment</caption>             
+                        <i class="fa-solid fa-cloud-arrow-up  fa-4x upload" style="color: white;"></i>   
+                        <button type="submit" class="paid-btn">PAID</button>
+                    </div>
+                </div>
+                <div class="status">
+                    <h3 style="display: none;">Payment Status</h3>
+                    <img class="success" src="{% static 'images/icon-checkList.png' %}" alt="">
+                    <img class="failed" src="{% static 'images/icon-cancel.png' %}" alt="">
+                    <img class="waiting" src="{% static 'images/icon-pending.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="description">
+        <h1 style="font-weight: 950; margin-bottom: 2vh;">Description</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+            Impedit ratione laboriosam officiis officia incidunt beatae ullam 
+            ducimus velit iusto, omnis fugiat porro. Ipsum dolorum ab cum dolores 
+            voluptatum beatae ipsa voluptatibus qui ratione, quasi fuga enim error 
+            autem aut accusamus? Tempora, natus repudiandae nostrum earum exercitationem 
+            labore quas rerum consequuntur! Esse expedita aliquid natus perferendis 
+            alias, ullam quod quas. Voluptatum, repudiandae?</p>
+    </div>
+    <script src="{% static 'js/detailProduct.js' %}"></script>
+    <script src="https://kit.fontawesome.com/779f43f783.js" crossorigin="anonymous"></script>
+</body>
+</html>

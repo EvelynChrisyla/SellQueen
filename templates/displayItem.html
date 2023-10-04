@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <section class="content">
+        <div class="display-grid">
+            {% for p in products %}        
+            <div class="item-card">
+                <a href="/detail/{{p.id}}">
+                    <div class="item-img">
+                        <img src="{{p.imageURL}}" alt="" style="width: 225px; height: 175px; margin: 0px; border-radius: 25px;">                 
+                    </div>
+                    <div class="item-desc">
+                        <div class="item-name">
+                            {{p.name}}
+                        </div>
+                        <div class="item-price">
+                            Rp {{p.price}}
+                        </div>
+                    </div>
+                </a>               
+            </div>
+            {% endfor %}
+        </div>      
+    </section>
+
+{% endblock %}
